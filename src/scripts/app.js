@@ -20,8 +20,11 @@ form.addEventListener("submit", (event) => {
     .then((data) => {
       console.log(data);
       displayPokeInfo(data);
+    })
+    .catch((error) => {
+      console.error("Error fetching Pokémon data:", error);
+      pokeInfo.innerText = "Pokémon not found.";
     });
-    
 });
   
 function displayPokeInfo(pokemon) {
